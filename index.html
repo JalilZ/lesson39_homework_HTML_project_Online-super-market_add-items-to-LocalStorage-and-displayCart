@@ -9,7 +9,7 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css"> <!--my styles.css-->
     <title>Document</title>
-    <!--GitHub live:             -->
+    <!--GitHub live: https://jalilz.github.io/lesson39_homework_HTML_project_Online-super-market_add-items-to-LocalStorage-and-displayCart/ -->
 </head>
 
 <body onload="displayMyCart()">
@@ -18,7 +18,7 @@
     <div class="jumbotron">
         <div class="container text-center">
             <h1 class="display-3">Yafo Online Super-Market</h1>
-            <p class="lead">Welcome to Yafo's Super-Market</p>
+            <p class="lead">Welcome to Yafo's Super-Market</p> <!--The lead class in Bootstrap is used to add emphasis to a paragraph-->
         </div>
     </div>
 
@@ -44,7 +44,7 @@
     <!--Display My Cart-->
     <div class="jumbotron">
         <div>
-            <h1 class="display-6">My Cart &#128722</h1>
+            <h1 class="display-6" style="padding-left: 35px;">My Cart &#128722</h1>
 
         </div>
     </div>
@@ -63,7 +63,7 @@
         <tfoot>
             <tr>
                 <td colspan="1" style="text-align:center;"><strong>Total:</strong></td>
-                <td style="text-align:center;" id="totalPrice"><strong></strong></td>
+                <td style="text-align:center;" id="totalPrice"></td>
                 <td style="text-align:center;"></td>
             </tr>
         </tfoot>
@@ -85,11 +85,12 @@
         const superProds = [{ prod: 'Milk', desc: '1L Fortified 3%', price: 10, image: 'images/milkp.jpg' },
                             { prod: 'Eggs', desc: '8-pack, size L', price: 15, image: 'images/eggp.jpg' },
                             { prod: 'Cheese', desc: '200gram Swiss Cheese', price: 75, image: 'images/cheesep.jpeg' },
-                            { prod: 'Rib-eye', desc: '1kg USDA-A Grade', price: 280, image: 'images/meatp.jpg' },
-                            { prod: 'Chicken', desc: '1kg chicken', price: 80, image: 'images/chickenp.jpg' },
-                            { prod: 'Chocolate', desc: '100gram chocolate bar', price: 15, image: 'images/chocolatep.jpg' }]
-        display.innerHTML = ''
-        display.innerHTML = superProds.map((item, index) => `
+                            { prod: 'Rib-eye', desc: '1kg USDA Grade A', price: 280, image: 'images/meatp.jpg' },
+                            { prod: 'Chicken', desc: '1kg Chicken', price: 80, image: 'images/chickenp.jpg' },
+                            { prod: 'Chocolate', desc: '100gram Chocolate Bar', price: 15, image: 'images/chocolatep.jpg' }]
+
+        // index of array will be used to identify the item object from superProds; and push to array.
+        display.innerHTML = superProds.map((item, index) => ` 
         <div class="card" style="width: 18rem;" id="display">
             <img src="${item.image}" class="card-img-top" alt="No image in system." width="50%" height="50%">
 
