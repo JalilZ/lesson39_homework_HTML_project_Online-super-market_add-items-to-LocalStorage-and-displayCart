@@ -82,12 +82,12 @@
         //if the localStorage.getItem('cart') method returns a falsy value (such as null or undefined). 
         // This ensures that myCart is always an array, even if there is no cart data in localStorage.
 
-        const superProds = [{ prod: 'Milk', desc: '1L Fortified 3%', price: 10, image: '../images/milkp.jpg' },
-                            { prod: 'Eggs', desc: '8-pack, size L', price: 15, image: '/images/eggp.jpg' },
-                            { prod: 'Cheese', desc: '200gram Swiss Cheese', price: 75, image: '/images/cheesep.jpeg' },
-                            { prod: 'Rib-eye', desc: '1kg USDA-A Grade', price: 280, image: '/images/meatp.jpg' },
-                            { prod: 'Chicken', desc: '1kg chicken', price: 80, image: '/images/chickenp.jpg' },
-                            { prod: 'Chocolate', desc: '100gram chocolate bar', price: 15, image: '/images/chocolatep.jpg' }]
+        const superProds = [{ prod: 'Milk', desc: '1L Fortified 3%', price: 10, image: 'images/milkp.jpg' },
+                            { prod: 'Eggs', desc: '8-pack, size L', price: 15, image: 'images/eggp.jpg' },
+                            { prod: 'Cheese', desc: '200gram Swiss Cheese', price: 75, image: 'images/cheesep.jpeg' },
+                            { prod: 'Rib-eye', desc: '1kg USDA-A Grade', price: 280, image: 'images/meatp.jpg' },
+                            { prod: 'Chicken', desc: '1kg chicken', price: 80, image: 'images/chickenp.jpg' },
+                            { prod: 'Chocolate', desc: '100gram chocolate bar', price: 15, image: 'images/chocolatep.jpg' }]
         display.innerHTML = ''
         display.innerHTML = superProds.map((item, index) => `
         <div class="card" style="width: 18rem;" id="display">
