@@ -29,11 +29,16 @@
     </div>
     <!--/Welcome and logo bar-->
 
-    <!--Display Products-->
-    <div id="display" class="grid-container-superproducts">
 
-    </div>
+
+
+
+    <!--Display Products-->
+    <div id="display" class="grid-container-superproducts"></div>
     <!--/Display Products-->
+
+
+
 
 
     <!--Display My Cart-->
@@ -43,7 +48,6 @@
 
         </div>
     </div>
-
 
     <table class="table table-light table-hover">
         <thead>
@@ -66,18 +70,24 @@
     </table>
     <!--/Display My Cart-->
 
+
+
+
+
+
     <script>
+
         const myCart = JSON.parse(localStorage.getItem('cart')) || [];
         console.log(myCart)
         //if the localStorage.getItem('cart') method returns a falsy value (such as null or undefined). 
         // This ensures that myCart is always an array, even if there is no cart data in localStorage.
 
-        const superProds = [{ prod: 'Milk', desc: '1L Fortified 3%', price: 10, image: '/images/milkp.jpg' },
-        { prod: 'Eggs', desc: '8-pack, size L', price: 15, image: '/images/eggp.jpg' },
-        { prod: 'Cheese', desc: '200gram Swiss Cheese', price: 75, image: '/images/cheesep.jpeg' },
-        { prod: 'Rib-eye', desc: '1kg USDA-A Grade', price: 280, image: '/images/meatp.jpg' },
-        { prod: 'Chicken', desc: '1kg chicken', price: 80, image: '/images/chickenp.jpg' },
-        { prod: 'Chocolate', desc: '100gram chocolate bar', price: 15, image: '/images/chocolatep.jpg' }]
+        const superProds = [{ prod: 'Milk', desc: '1L Fortified 3%', price: 10, image: '../images/milkp.jpg' },
+                            { prod: 'Eggs', desc: '8-pack, size L', price: 15, image: '/images/eggp.jpg' },
+                            { prod: 'Cheese', desc: '200gram Swiss Cheese', price: 75, image: '/images/cheesep.jpeg' },
+                            { prod: 'Rib-eye', desc: '1kg USDA-A Grade', price: 280, image: '/images/meatp.jpg' },
+                            { prod: 'Chicken', desc: '1kg chicken', price: 80, image: '/images/chickenp.jpg' },
+                            { prod: 'Chocolate', desc: '100gram chocolate bar', price: 15, image: '/images/chocolatep.jpg' }]
         display.innerHTML = ''
         display.innerHTML = superProds.map((item, index) => `
         <div class="card" style="width: 18rem;" id="display">
@@ -93,6 +103,7 @@
         </div>
         `).join("")
 
+
         const buyProduct = (index) => {
             const myCart = JSON.parse(localStorage.getItem('cart')) || [];
             myCart.push(superProds[index])
@@ -101,8 +112,9 @@
             displayMyCart()
         }
 
+
+
         const displayMyCart = () => {
-            
             const myCart = JSON.parse(localStorage.getItem('cart')) || [];
             //console.log(myCart)
             displaycart.innerHTML = ''
@@ -113,11 +125,11 @@
                 <td style="text-align:center;"><button class="btn btn-dark" onclick="delitem(${index})">Remove Item</button></td>
                 `
                 displaycart.innerHTML += row
-                
             });
             sumPrices()
-            
         }
+
+
 
         const delitem = (index) => {
             const myCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -127,6 +139,8 @@
             displayMyCart()
         }
 
+
+        
         const sumPrices = () => {
             const myCart = JSON.parse(localStorage.getItem('cart')) || [];
             let total = 0
@@ -136,7 +150,7 @@
             console.log(total)
             totalPrice.innerHTML = `<strong>&#8362 ${total.toLocaleString()}</strong>` //toLocaleString() so it has a comma if in thousands
         }
-        
+
 
     </script>
 
